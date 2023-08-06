@@ -38,7 +38,7 @@
 
 ##### Output
 Schema : \
-![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/01f6160c-9532-4012-830f-6106f4083a48) \
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/35f9a67c-1bd3-4c56-a3cc-d301f49c6358)
 Table : \
 ![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/53cbf9e9-5c56-448e-ae34-c96f77d8c550)
 <br>
@@ -126,7 +126,15 @@ The values in column 'PRODNO' in the PURCHASE table must be present in the colum
 
 
 #### 15. Modify the structure of order date field in the purchase into character.
-        Working on this one 
+##### Query
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/a4161efa-a794-4333-aa29-524a4b4eafa8)
+
+##### Output
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/3bdf354b-594e-43f3-ac46-69e52c9786c2)
+\
+Schema: \
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/081a2ff2-a585-4c33-bf8c-02aa7bb08266)
+<br>
 
 
 #### 16. Find min and max price from product table.
@@ -178,10 +186,26 @@ Table \
 
 
 #### 21. Copy the contents of field order_no and orderdate of purchase table into new table.
-      Working on this too 🤪
+##### Query
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/20130a5c-1e12-4a31-9e05-8eb1eee459a4)
+
+##### Output
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/06b9eb9b-77ab-434e-8134-837774abed5a)
+\
+Table \
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/d91757b9-88f5-4f52-902a-3932b53a2e59)
+\
+Schema 
+\
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/468f6ba1-d4fb-47fe-b0cd-159757d82a45)
+
 
 #### 22. Delete the newly created table.
-       Can't do this without the prev one r8 ? 😅
+##### Query
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/b0f6517c-e7a5-4caa-ae18-1fa06c6178af)
+
+##### Output
+![image](https://github.com/Abhiraman-S-Nair/S5-DBMS-Lab/assets/84242314/d786543a-57f9-436d-9918-05ffe171f9c4)
 
 #### 23. Create view of customer table.
 ##### Query
@@ -202,7 +226,7 @@ Table \
 
 
 #### 25. Retrieve transaction details of customer who lives in same city, obtain the result through self-join and correlated join.
-      Working on this one as well 😅😅
+      Working on this one 😅😅
 
 #### 26. Retrieve customer names starting with 'R'.
 ##### Query
