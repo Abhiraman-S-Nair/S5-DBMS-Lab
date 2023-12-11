@@ -1,0 +1,106 @@
+create table Book_Master (book_name varchar(40) primary key, author_name varchar(20) not null, price int not null, quantity int);
+
+insert into book_master (book_name, author_name, price, quantity)
+values ('The Great Gatsby', 'F. Scott Fitzgerald', 25.99, 50);
+
+insert into book_master (book_name, author_name, price, quantity)
+values ('To Kill a Mockingbird', 'Harper Lee', 19.95, 75);
+
+insert into book_master (book_name, author_name, price, quantity)
+values ('1984', 'George Orwell', 15.50, 40);
+
+insert into book_master (book_name, author_name, price, quantity)
+values ('The Catcher in the Rye', 'J.D. Salinger', 21.75, 60);
+
+insert into book_master (book_name, author_name, price, quantity)
+values ('Harry Potter and the Sorcerer''s Stone', 'J.K. Rowling', 29.99, 90);
+
+SQL> select * from book_master;
+
+BOOK_NAME                                AUTHOR_NAME               PRICE   QUANTITY
+---------------------------------------- -------------------- ---------- ----------
+The Great Gatsby                         F. Scott Fitzgerald          26         50
+To Kill a Mockingbird                    Harper Lee                   20         75
+1984                                     George Orwell                16         40
+The Catcher in the Rye                   J.D. Salinger                22         60
+Harry Potter and the Sorcerer's Stone    J.K. Rowling                 30         90
+
+
+SQL> update book_master set quantity=2*quantity;
+
+5 rows updated.
+
+SQL> select * from book_master;
+
+BOOK_NAME                                AUTHOR_NAME               PRICE   QUANTITY
+---------------------------------------- -------------------- ---------- ----------
+The Great Gatsby                         F. Scott Fitzgerald          26        100
+To Kill a Mockingbird                    Harper Lee                   20        150
+1984                                     George Orwell                16         80
+The Catcher in the Rye                   J.D. Salinger                22        120
+Harry Potter and the Sorcerer's Stone    J.K. Rowling                 30        180
+
+SQL> update book_master set price=4.5*price;
+
+5 rows updated.
+
+SQL> select * from book_master;
+
+BOOK_NAME                                AUTHOR_NAME               PRICE   QUANTITY
+---------------------------------------- -------------------- ---------- ----------
+The Great Gatsby                         F. Scott Fitzgerald         117        100
+To Kill a Mockingbird                    Harper Lee                   90        150
+1984                                     George Orwell                72         80
+The Catcher in the Rye                   J.D. Salinger                99        120
+Harry Potter and the Sorcerer's Stone    J.K. Rowling                135        180
+
+SQL> select book_name as Title from book_master where price>100;
+
+TITLE
+----------------------------------------
+The Great Gatsby
+Harry Potter and the Sorcerer's Stone
+
+SQL> select book_name as Title,  author_name as Author, price as Rate from book_master where author_name like 'A%';
+
+no rows selected
+
+SQL> select book_name as Title,  author_name as Author, price as Rate from book_master where author_name like 'J%';
+
+TITLE                                    AUTHOR                     RATE
+---------------------------------------- -------------------- ----------
+The Catcher in the Rye                   J.D. Salinger                99
+Harry Potter and the Sorcerer's Stone    J.K. Rowling                135
+
+SQL>
+
+
+
+create table reg_result (regno int primary key, name varchar(20) not null, maths int not null, maths_sess int not null, os int not null, os_sess int not null, dbms int not null, dbms_sess int not null, grand_total int);
+
+create table imp_suppl_result(regno int primary key, maths varchar(10) not null, os varchar(10) not null, dbms varchar(10) not null, foreign key(regno) references reg_result(regno) on delete cascade);
+
+trigger in file trail1.sql
+
+-- Inserting records into the reg_result table
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (101, 'John Doe', 90, 85, 78, 80, 88, 92);
+
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (102, 'Jane Smith', 78, 82, 88, 90, 75, 85);
+
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (103, 'Alice Johnson', 85, 88, 92, 87, 90, 94);
+
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (104, 'Bob Williams', 92, 90, 85, 78, 88, 82);
+
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (105, 'Eva Brown', 78, 85, 90, 92, 82, 88);
+
+insert into reg_result (regno, name, maths, maths_sess, os, os_sess, dbms, dbms_sess)
+values (106, 'Michael Davis', 88, 82, 94, 87, 90, 85);
+
+
+update reg_result r set grand_total = coalesce((select sum(case when i.maths='Pass' and i.os='Pass' and i.dbms='Pass' then r.maths+r.maths_sess+r.os+r.os_sess+r.dbms+r.dbms_sess end) as total from imp_suppl_result i where i.regno=r.regno), 0);
+
