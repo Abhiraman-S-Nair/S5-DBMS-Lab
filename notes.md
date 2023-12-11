@@ -536,9 +536,7 @@ Normalization is a database design technique used to organize tables and minimiz
    - A multi-valued attribute is an attribute that can hold multiple values for a single entity.
    - **Example:** In an entity "Person," the attribute "Phone Numbers" could be multi-valued.
 
-<li>**Multi-Valued Dependency (MVD):**
-
-
+- **Multi-Valued Dependency (MVD):**
 - A multi-valued dependency exists when one multi-valued attribute uniquely determines another multi-valued attribute in the same table.
 - **Example:** If "Person" has multi-valued attributes "Phone Numbers" and "Emails," and each phone number uniquely determines an email, a multi-valued dependency exists.
 
@@ -549,21 +547,15 @@ Normalization is a database design technique used to organize tables and minimiz
    - A primary key is a unique identifier for a record in a table. It ensures that each row can be uniquely identified.
    - **Example:** An "EmployeeID" in an "Employees" table.
 
-<li>**Candidate Key:**
-
-
+**Candidate Key:**
 - A candidate key is a set of attributes that can uniquely identify a record in a table. It is a potential primary key.
 - **Example:** In an "Employees" table, both "EmployeeID" and "SocialSecurityNumber" could be candidate keys.
 
-<li>**Super Key:**
-
-
+**Super Key:**
 - A super key is a set of attributes that, taken together, can uniquely identify a record in a table. It may include more attributes than necessary.
 - **Example:** In an "Employees" table, a super key could be {EmployeeID, FirstName, LastName}.
 
-<li>**Foreign Key:**
-
-
+**Foreign Key:**
 - A foreign key is a field in a table that is the primary key in another table. It establishes a link between the two tables.
 - **Example:** If "EmployeeID" in a table references the "EmployeeID" in an "Employees" table, it is a foreign key.
 
