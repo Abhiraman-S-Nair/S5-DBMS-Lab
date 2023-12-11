@@ -405,22 +405,22 @@ Certainly! Here are descriptions for ER-Models, PL/SQL Blocks, Data Models, Curs
    - **Syntax:** ER models use various symbols such as rectangles for entities, diamonds for relationships, and ovals for attributes. Cardinality and participation constraints are represented with lines and symbols.
 - **PL/SQL Blocks:**
    - **Description:** PL/SQL (Procedural Language/Structured Query Language) blocks are units of code written in the PL/SQL language. They consist of declarations, executable statements, and exception handlers.
-   - **Syntax:**```plsql
-   Copy code
-   DECLARE
+   - **Syntax:**
+```
+DECLARE
   -- Declarations (optional)
 BEGIN
   -- Executable statements
 EXCEPTION
   -- Exception handling (optional)
 END;
-
+```
 - **Data Models:**
    - **Description:** Data models are abstract representations of how data is structured and stored in a database. Common data models include the relational model, hierarchical model, network model, and object-oriented model.
    - **Syntax:** The syntax varies depending on the specific data model. In the relational model, for example, data is organized into tables with rows and columns.
 - **Cursor:**
    - **Description:** A cursor in database programming is a mechanism for traversing the records in a result set. It allows manipulation of data row by row.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```  
 DECLARE
   cursor_name CURSOR IS
@@ -435,7 +435,7 @@ END;
 
 - **Trigger:**
    - **Description:** A trigger is a set of instructions that are automatically executed ("triggered") in response to specific events on a particular table or view in a database.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```
 CREATE OR REPLACE TRIGGER trigger_name
 {BEFORE | AFTER} {INSERT | UPDATE | DELETE}
@@ -448,7 +448,7 @@ END;
 ```
 - **View:**
    - **Description:** A view is a virtual table based on the result of a SELECT query. It does not store data itself but provides a way to represent complex queries as a table.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```
 CREATE VIEW view_name AS
 SELECT column1, column2 FROM table_name WHERE condition;
@@ -456,7 +456,7 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 - **Procedure:**
    - **Description:** A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a single unit. Procedures are stored in the database and can be invoked by application programs.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```
 CREATE OR REPLACE PROCEDURE procedure_name
 (parameter1 datatype, parameter2 datatype, ...)
@@ -468,7 +468,7 @@ END procedure_name;
 ```
 - **Function:**
    - **Description:** A stored function is similar to a stored procedure but returns a value. It can be used in SQL queries to perform computations and return results.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```
 CREATE OR REPLACE FUNCTION function_name
 (parameter1 datatype, parameter2 datatype, ...)
@@ -482,7 +482,7 @@ END function_name;
 ```
 - **Package:**
    - **Description:** A package is a schema object that groups related PL/SQL types, variables, procedures, and functions together. It provides a way to organize and encapsulate functionality.
-   - **Syntax:**```plsql
+   - **Syntax:**
 ```
 CREATE OR REPLACE PACKAGE package_name AS
    -- Declarations (types, constants, variables)
