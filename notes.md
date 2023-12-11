@@ -415,15 +415,14 @@ EXCEPTION
   -- Exception handling (optional)
 END;
 
-```
 - **Data Models:**
    - **Description:** Data models are abstract representations of how data is structured and stored in a database. Common data models include the relational model, hierarchical model, network model, and object-oriented model.
    - **Syntax:** The syntax varies depending on the specific data model. In the relational model, for example, data is organized into tables with rows and columns.
 - **Cursor:**
    - **Description:** A cursor in database programming is a mechanism for traversing the records in a result set. It allows manipulation of data row by row.
    - **Syntax:**```plsql
-   Copy code
-   DECLARE
+```  
+DECLARE
   cursor_name CURSOR IS
     SELECT column1, column2 FROM table_name WHERE condition;
 BEGIN
@@ -432,13 +431,13 @@ BEGIN
   -- Process the data
   CLOSE cursor_name;
 END;
-
 ```
+
 - **Trigger:**
    - **Description:** A trigger is a set of instructions that are automatically executed ("triggered") in response to specific events on a particular table or view in a database.
    - **Syntax:**```plsql
-   Copy code
-   CREATE OR REPLACE TRIGGER trigger_name
+```
+CREATE OR REPLACE TRIGGER trigger_name
 {BEFORE | AFTER} {INSERT | UPDATE | DELETE}
 ON table_name
 FOR EACH ROW
@@ -450,16 +449,16 @@ END;
 - **View:**
    - **Description:** A view is a virtual table based on the result of a SELECT query. It does not store data itself but provides a way to represent complex queries as a table.
    - **Syntax:**```plsql
-   Copy code
-   CREATE VIEW view_name AS
+```
+CREATE VIEW view_name AS
 SELECT column1, column2 FROM table_name WHERE condition;
 
 ```
 - **Procedure:**
    - **Description:** A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a single unit. Procedures are stored in the database and can be invoked by application programs.
    - **Syntax:**```plsql
-   Copy code
-   CREATE OR REPLACE PROCEDURE procedure_name
+```
+CREATE OR REPLACE PROCEDURE procedure_name
 (parameter1 datatype, parameter2 datatype, ...)
 AS
 BEGIN
@@ -470,8 +469,8 @@ END procedure_name;
 - **Function:**
    - **Description:** A stored function is similar to a stored procedure but returns a value. It can be used in SQL queries to perform computations and return results.
    - **Syntax:**```plsql
-   Copy code
-   CREATE OR REPLACE FUNCTION function_name
+```
+CREATE OR REPLACE FUNCTION function_name
 (parameter1 datatype, parameter2 datatype, ...)
 RETURN return_datatype
 AS
@@ -484,11 +483,11 @@ END function_name;
 - **Package:**
    - **Description:** A package is a schema object that groups related PL/SQL types, variables, procedures, and functions together. It provides a way to organize and encapsulate functionality.
    - **Syntax:**```plsql
-   Copy code
-   CREATE OR REPLACE PACKAGE package_name AS
-  -- Declarations (types, constants, variables)
-  PROCEDURE procedure_name;
-  FUNCTION function_name RETURN datatype;
+```
+CREATE OR REPLACE PACKAGE package_name AS
+   -- Declarations (types, constants, variables)
+   PROCEDURE procedure_name;
+   FUNCTION function_name RETURN datatype;
 END package_name;
 /
 CREATE OR REPLACE PACKAGE BODY package_name AS
